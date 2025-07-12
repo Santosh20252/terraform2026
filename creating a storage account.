@@ -1,0 +1,18 @@
+creating a storage account.
+resource "azurerm_storage_account" "storage_account" {
+  name                     = "terraformstore10090"
+  resource_group_name      = "app-grp"
+  location                 = "North US"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+The storage account service has more properties and hence there are more arguements we can specify here
+
+resource "azurerm_storage_account" "storage_account" {
+  name                     = "terraformstore10090"
+  resource_group_name      = "app-grp"
+  location                 = "North US"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  allow_blob_public_access = true
+}
