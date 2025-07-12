@@ -1,0 +1,15 @@
+##Here we are creating a container in the storage account##
+resource "azurerm_storage_container" "data" {
+  name                  = "data"
+  storage_account_name  = "terraformstore10090"
+  container_access_type = "private"
+}
+
+# This is used to upload a local file onto the container
+resource "azurerm_storage_blob" "sample" {
+  name                   = "sample.txt"
+  storage_account_name   = "appstore4577687"
+  storage_container_name = "data"
+  type                   = "Block"
+  source                 = "sample.txt"
+}
